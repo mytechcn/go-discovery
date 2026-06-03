@@ -1,2 +1,2 @@
 // Package onvif The core function of this project is to discover IP cameras within the local area network via the ONVIF protocol.
-package onvif
+package godiscovery
