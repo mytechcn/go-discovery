@@ -1,0 +1,58 @@
+{
+    //"editor.tabSize": 4,
+    //"editor.insertSpaces": false, // Go社区习惯使用Tab缩进
+    "editor.formatOnSave": true,
+    "files.autoSave": "afterDelay",
+    "editor.fontSize": 15.5,
+    "window.zoomLevel": 1.5,
+    "debug.console.fontSize": 15,
+
+    // --- Go 核心配置 ---
+    "go.useLanguageServer": true,
+    "go.lintTool": "golangci-lint", // 推荐使用更强大的 golangci-lint
+    "go.lintOnSave": "package",
+    "go.vetOnSave": "package",
+    //"go.formatTool": "goimports",   // 强烈推荐：保存时自动删除/添加 import 引用
+    
+    // 单元测试与代码透视
+    //"go.testFlags": ["-v", "-count=1"], // 测试时不使用缓存，显示详细输出
+    "editor.codeLens": true,
+    // --- gopls 高级设置 (语言服务器) ---
+    "gopls": {
+        "ui.semanticTokens": true, // 启用更好的语法高亮
+        "formatting.gofumpt": true, // 使用更严格的gofumpt格式化（可选，推荐）
+        "ui.completion.usePlaceholders": true, // 补全函数时自动带入参数占位符
+        "ui.diagnostic.staticcheck": true, // 启用额外的静态检查
+        "codelenses": {
+           "references": true,
+           "implementations": true // 显示接口实现
+        },
+        "expandWorkspaceToModule": true
+    },
+
+    // --- 保存时的自动动作 ---
+    "[go]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "always", // 自动整理 import 排序
+            "source.fixAll": "explicit",         // 自动修复简单的代码问题
+            "source.fixAll.eslint": "never" // 禁用 ESLint 修复修复器
+        }
+    },
+
+    // --- 其他 UI 增强 ---
+    "go.inlayHints.parameterNames": true,       // 显示函数参数名提示
+    //"go.inlayHints.assignVariableTypes": true,  // 显示推导出的变量类型
+    "go.inlayHints.compositeLiteralTypes": true,
+    "diffEditor.codeLens": true,
+    "editor.codeLensFontFamily": "Consolas, 'Courier New', monospace",
+    "js/ts.referencesCodeLens.enabled": true,
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "vue",
+        "html"
+    ]
+}
